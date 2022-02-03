@@ -12,30 +12,30 @@ def changelog_to_dict(changelog_fp, show_unreleased=True):
     return keepachangelog.to_dict(changelog_fp, show_unreleased=show_unreleased)
 
 
-def wrap_git_cmd(cmd_str):
+def wrap_git_cmd(cmd_l):
     # NOTE Use universal_newlines=True to force Popen to return str over bytes to avoid working out which decode to use
     p = subprocess.Popen(
-        cmd_str, shell=True, stdout=subprocess.PIPE, universal_newlines=True
+        cmd_l, stdout=subprocess.PIPE, universal_newlines=True
     )
     out, err = p.communicate()
     return out.split("\n")[:-1]  # Remove last newline
 
 
 def get_untracked_files():
-    return wrap_git_cmd("git ls-files --others --exclude-standard")
+    return wrap_git_cmd(["git", "ls-files", "--others", "--exclude-standard"])
 
 
 def get_cached_files():
-    return wrap_git_cmd("git ls-files --cached")
+    return wrap_git_cmd(["git", "ls-files", "--cached"])
 
 
 def get_staged_files():
-    return wrap_git_cmd("git diff --staged --name-only")
+    return wrap_git_cmd(["git", "diff", "--staged", "--name-only"])
 
 
 # NOTE pre-commit stashes unstaged modified files so this command is a bit useless
 def get_unstaged_modified_files():
-    return wrap_git_cmd("git ls-files --modified")
+    return wrap_git_cmd(["git", "ls-files", "--modified"])
 
 
 # https://stackoverflow.com/a/1310912/
