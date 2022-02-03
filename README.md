@@ -39,7 +39,7 @@ my-app/
 You will need to configure `pre-commit-assert-changelog` with:
 
 * `--version-mod=hoot/version.py`
-* `backtick-prefixes=hoot`, `--package-dir=hoot`
+* `--backtick-prefixes=hoot`, `--package-dir=hoot`
 
 
 ## CHANGELOG format
@@ -51,6 +51,8 @@ You will need to configure `pre-commit-assert-changelog` with:
 # 1.0.0
 * Released new `hoot.client.HootClient` to better support users who are owls
 ```
+
+* Only backtick strings that begin with an allowed prefix (configured with `--backtick-prefixes`) will be screened against untracked and unstaged code files
 
 ## Version module format
 
