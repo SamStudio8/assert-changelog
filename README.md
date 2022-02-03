@@ -2,7 +2,7 @@
 
 pre-commit-assert-changelog is a `pre-commit` hook that attempts to find mentions of untracked or unstaged work in your CHANGELOG.
 It assumes your source files end with `.py` so is limited to Python project, and you will need to be using a CHANGELOG formatted with the [keepachangelog style](https://keepachangelog.com/).
-The hook is in early development and will need a lot of fiddling.
+The hook is in early development and will need a lot of fiddling to cover tricky use-cases that are almost sure to show up.
 
 ## Configure
 
