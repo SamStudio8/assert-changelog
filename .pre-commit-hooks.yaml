@@ -1,0 +1,18 @@
+-   id: assert-changelog-version
+    name: Check CHANGELOG has an entry that matches the currently defined __VERSION__
+    description: Check CHANGELOG has an entry that matches the currently defined __VERSION__
+    entry: assert_changelog version
+    language: python
+    language_version: python3.7
+    always_run: true
+    pass_filenames: false
+    args: [--version-mod=ocarina/version.py]
+-   id: assert-changelog-contents
+    name: Check for untracked or unstaged moduled paths referred to in the CHANGELOG
+    description: Check for untracked or unstaged moduled paths referred to in the CHANGELOG
+    entry: assert_changelog contents
+    language: python
+    language_version: python3.7
+    always_run: true
+    pass_filenames: false
+    args: [--backtick-prefixes=ocarina,--package-dir-name=ocarina,--exclude-previous]
