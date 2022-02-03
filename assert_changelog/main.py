@@ -44,10 +44,15 @@ def get_python_module_names(package_dir_name):
 
     modules = set([])
 
-    # Add . to sys path to allow prefix to work and correctly import subpackages
-    # See https://bugs.python.org/issue33210
-    sys.path.append(".")  # TODO is this ok?
-
+    # Add empty string to sys path to allow prefix to work and correctly
+    # import subpackages, empty string on the sys.path is standard behaviour
+    # when the script dir is not available:
+    # > If the script directory is not available (e.g. if the interpreter is
+    # > invoked interactively or if the script is read from standard input),
+    # > path[0] is the empty string
+    # See https://docs.python.org/3/library/sys.html#sys.path
+    # See https://bugs.python.org/issue33210 and
+    sys.path.append("")
     for importer, modname, ispkg in pkgutil.walk_packages(
         [f"{package_dir_name}/"], prefix=f"{package_dir_name}."
     ):
