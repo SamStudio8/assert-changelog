@@ -1,6 +1,6 @@
-# pre-commit-assert-changelog
+# `assert-changelog` pre commit hook
 
-pre-commit-assert-changelog is a `pre-commit` hook for Python projects that attempts to find mentions of untracked or unstaged work in your CHANGELOG.
+`assert-changelog` is a [`pre-commit` hook](https://pre-commit.com/) for Python projects that attempts to find mentions of untracked or unstaged work in your CHANGELOG.
 `assert-changelog` leverages the predictable format of the [Keep a Changelog style](https://keepachangelog.com/) and a simple Sphinx-like markup (eg. "hoot/client/test.py" is \`hoot.client.test\`) to identify whether your CHANGELOG refers to untracked or uncommitted files in your repository.
 
 Python modules are identified with `pkgutil.walk_packages`, and mapped to the output of `git ls-files`.
