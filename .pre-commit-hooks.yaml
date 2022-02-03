@@ -1,7 +1,7 @@
 -   id: assert-changelog-version
     name: Check CHANGELOG has an entry that matches the currently defined __VERSION__
     description: Check CHANGELOG has an entry that matches the currently defined __VERSION__
-    entry: assert_changelog version
+    entry: assert-changelog version
     language: python
     language_version: python3
     always_run: true
@@ -10,7 +10,7 @@
 -   id: assert-changelog-contents
     name: Check for untracked or unstaged moduled paths referred to in the CHANGELOG
     description: Check for untracked or unstaged moduled paths referred to in the CHANGELOG
-    entry: assert_changelog contents
+    entry: assert-changelog contents
     language: python
     language_version: python3
     always_run: true
