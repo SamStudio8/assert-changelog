@@ -13,7 +13,7 @@ The hook is in early development and will need a lot of fiddling to cover tricky
 Add the following block to your .pre-commit-config.yaml:
 
 ```
--  repo: https://github.com/SamStudio8/pre-commit-assert-changelog
+-  repo: https://github.com/SamStudio8/assert-changelog
    rev: 0f0fd2fe45651c3fb4ead6f3d08d881195ea77dc
    hooks:
    -   id: assert-changelog-version
